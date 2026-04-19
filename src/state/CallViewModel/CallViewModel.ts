@@ -60,6 +60,8 @@ import {
 } from "../../utils/observable";
 import {
   duplicateTiles,
+  experimentalMicrophoneDenoise,
+  MatrixRTCMode,
   playReactionsSound,
   showReactions,
 } from "../../settings/settings";
@@ -573,6 +575,7 @@ export function createCallViewModel$(
         mediaDevices,
         muteStates,
         trackProcessorState$,
+        experimentalMicrophoneDenoise.value$,
         logger.getChild(
           "[Publisher " + connection.transport.livekit_service_url + "]",
         ),
